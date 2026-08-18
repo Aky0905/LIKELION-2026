@@ -1,0 +1,52 @@
+{
+  "profile": {
+    "diagnosis_date": "2026-05-20",
+    "source": "WHS 프로페셔널 진단 · 2회차",
+    "scores": {
+      "moisture": {
+        "label": "수분",
+        "value": 42,
+        "level": "낮음",
+        "status": "warning"
+      },
+      "sensitivity": {
+        "label": "민감도",
+        "value": 72,
+        "level": "높음",
+        "status": "danger"
+      },
+      "oil": {
+        "label": "유분",
+        "value": 51,
+        "level": "보통",
+        "status": "normal"
+      },
+      "elasticity": {
+        "label": "탄력",
+        "value": 58,
+        "level": "보통",
+        "status": "normal"
+      }
+    }
+  },
+  "trend": {
+    "period": "최근 4주",
+    "data": [
+      { "week": "1주차", "moisture": 48, "sensitivity": 65 },
+      { "week": "2주차", "moisture": 45, "sensitivity": 68 },
+      { "week": "3주차", "moisture": 40, "sensitivity": 70 },
+      { "week": "4주차", "moisture": 42, "sensitivity": 72 }
+    ]
+  },
+  "today_data": {
+    "sleep": { "label": "수면", "value": "5시간 40분", "status": "negative" },
+    "hrv": { "label": "HRV", "value": "-16%", "status": "negative" },
+    "activity": { "label": "활동량", "value": "+45%", "status": "positive" },
+    "humidity": { "label": "습도", "value": "35%", "status": "negative" },
+    "uv": { "label": "UV", "value": "3", "status": "neutral" }
+  },
+  "ai_report": {
+    "summary": "최근 2주간 수면 시간이 감소하고 있어요.",
+    "detail": "현재 조건에서는 보습 관리가 더 중요한 시기로 보여요. 수분 지수가 진단 시점 대비 소폭 하락했으며, 민감도는 상승 추세입니다."
+  }
+}
