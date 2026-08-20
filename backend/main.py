@@ -23,9 +23,24 @@ def load_json(filename: str):
         return json.load(f)
 
 
+@app.get("/")
+def root():
+    return {"service": "ORBIT API", "status": "running"}
+
+
 @app.get("/api/home")
 def get_home():
     return load_json("home.json")
+
+
+@app.get("/api/analysis")
+def get_analysis():
+    return load_json("analysis.json")
+
+
+@app.get("/api/care")
+def get_care():
+    return load_json("care.json")
 
 
 @app.get("/api/skin")

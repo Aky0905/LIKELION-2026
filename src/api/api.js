@@ -12,6 +12,10 @@ export function getHome() {
   return fetchData('/home')
 }
 
+export function getAnalysis() {
+  return fetchData('/analysis')
+}
+
 export function getSkin() {
   return fetchData('/skin')
 }

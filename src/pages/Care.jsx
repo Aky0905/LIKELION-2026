@@ -1,10 +1,49 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Care.css'
 import lotionImage from '../assets/lotion.png'
+import { getCare } from '../api/api'
+
+const DEFAULT_CARE = {
+  priority: {
+    name: '진정 · 보습 케어',
+    description: '피부가 민감해지기 쉬운 상태예요.',
+  },
+  tips: [
+    { title: '미지근한 물로 세안하기', desc: '피부 자극을 줄여주세요.' },
+    { title: '자외선과 보습에 신경 쓰기', desc: '외출 전 보습을 챙겨주세요.' },
+    { title: '충분한 수분 섭취하기', desc: '건조하지 않도록 물을 자주 마셔주세요.' },
+  ],
+}
+
+function CheckIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="5 12 10 17 19 7" />
+    </svg>
+  )
+}
 
 function Care() {
   const navigate = useNavigate()
+  const [data, setData] = useState(DEFAULT_CARE)
+
+  useEffect(() => {
+    getCare()
+      .then((res) => setData({ ...DEFAULT_CARE, ...res }))
+      .catch(() => {})
+  }, [])
+
+  const { priority, tips } = data
 
   return (
     <div className="care-page">
@@ -73,11 +112,11 @@ function Care() {
           <div className="care-product-info">
 
             <h2 className="care-product-name">
-              진정 · 보습 케어
+              {priority.name}
             </h2>
 
             <p className="care-product-description">
-              피부가 민감해지기 쉬운 상태예요.
+              {priority.description}
             </p>
 
           </div>
@@ -108,114 +147,17 @@ function Care() {
 
         <div className="tips-card">
 
-
-          {/* 팁 1 */}
-          <div className="tip-item">
-
-            <div className="tip-icon tip-blue">
-
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="5 12 10 17 19 7" />
-              </svg>
-
+          {tips.map((tip, i) => (
+            <div className="tip-item" key={i}>
+              <div className="tip-icon tip-blue">
+                <CheckIcon />
+              </div>
+              <div className="tip-content">
+                <strong>{tip.title}</strong>
+                <span>{tip.desc}</span>
+              </div>
             </div>
-
-
-            <div className="tip-content">
-
-              <strong>
-                미지근한 물로 세안하기
-              </strong>
-
-              <span>
-                피부 자극을 줄여주세요.
-              </span>
-
-            </div>
-
-          </div>
-
-
-          {/* 팁 2 */}
-          <div className="tip-item">
-
-            <div className="tip-icon tip-blue">
-
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="5 12 10 17 19 7" />
-              </svg>
-
-            </div>
-
-
-            <div className="tip-content">
-
-              <strong>
-                자외선과 보습에 신경 쓰기
-              </strong>
-
-              <span>
-                외출 전 보습을 챙겨주세요.
-              </span>
-
-            </div>
-
-          </div>
-
-
-          {/* 팁 3 */}
-          <div className="tip-item">
-
-            <div className="tip-icon tip-blue">
-
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="5 12 10 17 19 7" />
-              </svg>
-
-            </div>
-
-
-            <div className="tip-content">
-
-              <strong>
-                충분한 수분 섭취하기
-              </strong>
-
-              <span>
-                건조하지 않도록 물을 자주 마셔주세요.
-              </span>
-
-            </div>
-
-          </div>
-
+          ))}
 
         </div>
 

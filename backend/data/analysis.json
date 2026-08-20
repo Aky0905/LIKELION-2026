@@ -1,0 +1,19 @@
+{
+  "offlineDiagnosis": [
+    { "icon": "sleep", "label": "수면", "result": "진단 결과: 보통", "level": "보통", "color": "purple", "width": "58%" },
+    { "icon": "water", "label": "수분", "result": "진단 결과: 낮음", "level": "낮음", "color": "blue", "width": "28%" },
+    { "icon": "activity", "label": "활동량", "result": "진단 결과: 보통", "level": "보통", "color": "red", "width": "50%" },
+    { "icon": "redness", "label": "홍조 경향", "result": "진단 결과: 높음", "level": "높음", "color": "pink", "width": "82%" },
+    { "icon": "barrier", "label": "장벽 민감도", "result": "진단 결과: 높음", "level": "높음", "color": "yellow", "width": "82%" }
+  ],
+  "currentState": [
+    { "icon": "sleep", "label": "수면 부족", "value": "평소 대비 -1시간 20분", "color": "purple", "trend": "down" },
+    { "icon": "activity", "label": "활동량 증가", "value": "평소 대비 +45%", "color": "red", "trend": "up" },
+    { "icon": "water", "label": "습도 낮음", "value": "현재 35%", "color": "blue", "trend": "down" },
+    { "icon": "uv", "label": "UV 지수 보통", "value": "현재 3 (보통)", "color": "yellow", "trend": "normal" }
+  ],
+  "ai": {
+    "title": "건조 · 민감 가능성 높음",
+    "description": "수면 부족과 낮은 습도가 함께 나타나 피부 수분 부족과 민감도 증가에 영향을 준 것으로 분석됩니다. 오늘은 보습과 진정 중심의 관리가 필요하며, 외부 자극을 최소화하는 것이 좋아요."
+  }
+}

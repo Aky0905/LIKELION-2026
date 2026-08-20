@@ -1,11 +1,86 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Home.css'
+import { getHome } from '../api/api'
 
 import orbitFace from '../assets/orbit-face.png'
 
+/* 요인 key별 아이콘 (JSON으로 못 담는 SVG는 프론트에서 매핑) */
+const factorIcons = {
+  sleep: {
+    className: 'sleep-icon',
+    svg: (
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    ),
+  },
+  activity: {
+    className: 'activity-icon',
+    svg: (
+      <>
+        <circle cx="13" cy="4" r="1" />
+        <path d="M4 17l5 1l.75 -1.5" />
+        <path d="M15 21l0 -4l-4 -3l1 -6" />
+        <path d="M7 12l0 -3l5 -1l3 3l3 1" />
+      </>
+    ),
+  },
+  humidity: {
+    className: 'humidity-icon',
+    svg: (
+      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+    ),
+  },
+  uv: {
+    className: 'uv-icon',
+    svg: (
+      <>
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+      </>
+    ),
+  },
+}
+
+/* 백엔드 연결 실패 시 사용할 기본(더미) 데이터 */
+const DEFAULT_HOME = {
+  greeting: 'WHS님, 좋은 하루 보내세요!',
+  prediction: {
+    label: '오늘의 피부 상태',
+    status: '건조 · 민감 가능성 높음',
+    time: '14:00 기준 예측',
+    badge: '주의',
+  },
+  factors: [
+    { key: 'sleep', name: '수면', value: '5시간 40분', sub: '(-1시간 20분)' },
+    { key: 'activity', name: '활동량', value: '+45%', sub: '(높음)' },
+    { key: 'humidity', name: '습도', value: '35%', sub: '(낮음)' },
+    { key: 'uv', name: 'UV 지수', value: '3', sub: '(보통)' },
+  ],
+  aiComment: {
+    body: '수면이 부족하고 습도가 낮아, 평소보다 피부가 민감해질 수 있어요.',
+    care: '진정 · 보습 케어',
+  },
+}
+
 function Home() {
   const navigate = useNavigate()
+  const [data, setData] = useState(DEFAULT_HOME)
+
+  useEffect(() => {
+    // 백엔드가 켜져 있으면 실제 데이터로 교체, 실패하면 기본값 유지
+    getHome()
+      .then((res) => setData({ ...DEFAULT_HOME, ...res }))
+      .catch(() => {})
+  }, [])
+
+  const { greeting, prediction, factors, aiComment } = data
 
   return (
     <div className="page home-page">
@@ -18,7 +93,7 @@ function Home() {
           </h1>
 
           <p className="home-greeting">
-            WHS님, 좋은 하루 보내세요!
+            {greeting}
             <span className="greeting-icon">☀️</span>
           </p>
         </div>
@@ -48,20 +123,20 @@ function Home() {
 
           <div className="prediction-text-area">
             <span className="prediction-label">
-              오늘의 피부 상태
+              {prediction.label}
             </span>
 
             <h2 className="prediction-status">
-              건조 · 민감 가능성 높음
+              {prediction.status}
             </h2>
 
             <div className="prediction-meta">
               <span className="prediction-time">
-                14:00 기준 예측
+                {prediction.time}
               </span>
 
               <span className="prediction-badge">
-                주의
+                {prediction.badge}
               </span>
             </div>
           </div>
@@ -294,115 +369,31 @@ function Home() {
 
         <div className="factors-row">
 
-          {/* 수면 */}
-          <div className="factor-item">
+          {factors.map((factor) => {
+            const iconInfo = factorIcons[factor.key] || {}
+            return (
+              <div className="factor-item" key={factor.key}>
+                <div className={`factor-icon-wrap ${iconInfo.className || ''}`}>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    {iconInfo.svg}
+                  </svg>
+                </div>
 
-            <div className="factor-icon-wrap sleep-icon">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-              </svg>
-            </div>
-
-            <span className="factor-name">수면</span>
-            <span className="factor-val">5시간 40분</span>
-            <span className="factor-sub">(-1시간 20분)</span>
-
-          </div>
-
-
-          {/* 활동량 */}
-          <div className="factor-item">
-
-            <div className="factor-icon-wrap activity-icon">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="13" cy="4" r="1" />
-                <path d="M4 17l5 1l.75 -1.5" />
-                <path d="M15 21l0 -4l-4 -3l1 -6" />
-                <path d="M7 12l0 -3l5 -1l3 3l3 1" />
-              </svg>
-            </div>
-
-            <span className="factor-name">활동량</span>
-            <span className="factor-val">+45%</span>
-            <span className="factor-sub">(높음)</span>
-
-          </div>
-
-
-          {/* 습도 */}
-          <div className="factor-item">
-
-            <div className="factor-icon-wrap humidity-icon">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
-              </svg>
-            </div>
-
-            <span className="factor-name">습도</span>
-            <span className="factor-val">35%</span>
-            <span className="factor-sub">(낮음)</span>
-
-          </div>
-
-
-          {/* UV */}
-          <div className="factor-item">
-
-            <div className="factor-icon-wrap uv-icon">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="12" cy="12" r="5" />
-                <line x1="12" y1="1" x2="12" y2="3" />
-                <line x1="12" y1="21" x2="12" y2="23" />
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                <line x1="1" y1="12" x2="3" y2="12" />
-                <line x1="21" y1="12" x2="23" y2="12" />
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-              </svg>
-            </div>
-
-            <span className="factor-name">UV 지수</span>
-            <span className="factor-val">3</span>
-            <span className="factor-sub">(보통)</span>
-
-          </div>
+                <span className="factor-name">{factor.name}</span>
+                <span className="factor-val">{factor.value}</span>
+                <span className="factor-sub">{factor.sub}</span>
+              </div>
+            )
+          })}
 
         </div>
 
@@ -436,13 +427,11 @@ function Home() {
         </div>
 
         <p className="ai-comment-body">
-          수면이 부족하고 습도가 낮아,
-          <br />
-          평소보다 피부가 민감해질 수 있어요.
+          {aiComment.body}
         </p>
 
         <p className="ai-comment-care">
-          오늘은 <strong>진정 · 보습 케어</strong>를 우선해 주세요.
+          오늘은 <strong>{aiComment.care}</strong>를 우선해 주세요.
         </p>
 
         <button
