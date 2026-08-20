@@ -1,0 +1,144 @@
+/* Skin Record Page */
+
+.skin-record-page {
+  padding-top: 12px;
+}
+
+.record-input-section {
+  margin-bottom: 32px;
+}
+
+.record-question {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.mood-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+}
+
+.mood-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 14px;
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 60px;
+}
+
+.mood-btn.active {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.mood-emoji {
+  font-size: 20px;
+}
+
+.mood-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.mood-btn.active .mood-label {
+  color: var(--primary);
+}
+
+.record-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-primary);
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s;
+  margin-bottom: 14px;
+  background: var(--bg-card);
+}
+
+.record-textarea:focus {
+  border-color: var(--primary);
+}
+
+.record-textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.btn-save-record {
+  width: 100%;
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-save-record:hover {
+  background: var(--primary-dark);
+}
+
+/* Past Records */
+.past-records {
+  margin-bottom: 24px;
+}
+
+.past-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.record-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.record-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.record-date {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-bottom: 6px;
+}
+
+.record-mood-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.record-memo {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.5;
+}

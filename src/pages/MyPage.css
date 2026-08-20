@@ -1,0 +1,266 @@
+/* =========================================
+   MyPage Styles
+========================================= */
+
+.mypage {
+  padding-top: 12px;
+
+  background: #ffffff;
+
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  padding-bottom: 100px;
+}
+
+
+/* =========================================
+   Header
+========================================= */
+
+.mypage-header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 36px;
+
+  margin-bottom: 24px;
+}
+
+
+/* 마이페이지 제목 */
+
+.mypage-title {
+  position: absolute;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  margin: 0;
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  color: #a8d9ff;
+
+  letter-spacing: -0.03em;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   Profile Card
+========================================= */
+
+.profile-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  background: var(--bg-card);
+
+  border-radius: var(--radius-xl);
+
+  padding: 20px;
+
+  box-shadow: var(--shadow-md);
+
+  margin-bottom: 28px;
+}
+
+.profile-avatar {
+  flex-shrink: 0;
+}
+
+.profile-avatar-circle {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f5fdff;
+
+  font-size: 22px;
+}
+
+.profile-info {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.profile-name {
+  font-size: 17px;
+
+  font-weight: 700;
+
+  color: var(--text-primary);
+}
+
+.profile-membership {
+  font-size: 12px;
+
+  color: var(--text-tertiary);
+}
+
+
+/* =========================================
+   프로필 보기 버튼
+========================================= */
+
+.btn-profile-view {
+  background: #f5fdff;
+
+  color: var(--primary);
+
+  border: none;
+
+  border-radius: var(--radius-sm);
+
+  padding: 8px 12px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition: background 0.2s;
+}
+
+.btn-profile-view:hover {
+  background: #edf9ff;
+}
+
+
+/* =========================================
+   Menu List
+========================================= */
+
+.mypage-menu-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+/* =========================================
+   Menu Item
+========================================= */
+
+.mypage-menu-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 16px;
+
+  background: var(--bg-card);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  cursor: pointer;
+
+  transition:
+    box-shadow 0.2s,
+    transform 0.1s;
+}
+
+.mypage-menu-item:hover {
+  box-shadow: var(--shadow-md);
+
+  transform: translateY(-1px);
+}
+
+.mypage-menu-item:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   Menu Icon
+========================================= */
+
+.mypage-menu-icon {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: #f5fdff;
+
+  color: var(--primary);
+}
+
+
+/* =========================================
+   Menu Info
+========================================= */
+
+.mypage-menu-info {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.mypage-menu-name {
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: var(--text-primary);
+}
+
+.mypage-menu-desc {
+  font-size: 12px;
+
+  color: var(--text-tertiary);
+
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   Menu Arrow
+========================================= */
+
+.mypage-menu-arrow {
+  flex-shrink: 0;
+
+  color: var(--text-tertiary);
+}

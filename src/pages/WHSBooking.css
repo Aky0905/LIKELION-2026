@@ -1,0 +1,136 @@
+/* =========================
+   WHS Booking Page
+========================= */
+
+.page.booking-page {
+  padding-top: 12px;
+  padding-bottom: 100px;
+  background: #ffffff;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.booking-page {
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+
+/* =========================
+   예약 안내
+========================= */
+
+.booking-intro {
+  background: #f5fdff;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+
+.booking-intro p {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+
+/* =========================
+   프로그램 목록
+========================= */
+
+.program-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+
+/* =========================
+   프로그램 카드
+========================= */
+
+.program-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 16px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================
+   프로그램 정보
+========================= */
+
+.program-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.program-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.program-meta {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+
+/* =========================
+   예약하기 버튼
+========================= */
+
+.btn-book {
+  background: #f5fdff;
+  color: #69b5ff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 9px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.btn-book:hover {
+  background: #edf9ff;
+}
+
+.btn-book:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================
+   예약 완료 상태
+========================= */
+
+.btn-book.booked {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+
+/* =========================
+   예약 완료 안내
+========================= */
+
+.booking-confirm {
+  background: var(--primary-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+}
+
+.booking-confirm p {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}

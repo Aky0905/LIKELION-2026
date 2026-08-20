@@ -1,0 +1,266 @@
+/* =========================================
+   Product Detail Page
+========================================= */
+
+.product-detail-page {
+  padding-top: 12px;
+  background: #ffffff;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   Header
+========================================= */
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+
+/* =========================================
+   Product Image
+========================================= */
+
+.product-image-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.product-image-circle {
+  width: 220px;
+  height: 220px;
+
+  background: #ffffff;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* lotion.png */
+.product-lotion-image {
+  width: 310px;
+  height: 310px;
+
+  object-fit: contain;
+  display: block;
+}
+
+
+/* =========================================
+   Product Info
+========================================= */
+
+.product-info-section {
+  margin-bottom: 24px;
+}
+
+.product-brand {
+  font-size: 12px;
+  color: #a8d9ff;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.product-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.product-desc {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   Recommend Reason
+========================================= */
+
+.recommend-reason {
+  background: #f5fdff;
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  margin-bottom: 24px;
+}
+
+.reason-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.reason-badge {
+  width: 24px;
+  height: 24px;
+
+  background: #ffffff;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reason-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #69b5ff;
+}
+
+.reason-text {
+  font-size: 14px;
+  color: #111827;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   Product Details
+========================================= */
+
+.product-details {
+  margin-bottom: 28px;
+}
+
+.details-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 14px;
+}
+
+.details-list {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.details-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 16px;
+
+  border-bottom: 1px solid var(--border-light);
+}
+
+.details-item:last-child {
+  border-bottom: none;
+}
+
+.details-key {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.details-val {
+  font-size: 14px;
+  color: #111827;
+  font-weight: 600;
+  text-align: right;
+}
+
+
+/* =========================================
+   Purchase Button
+========================================= */
+
+.product-action {
+  padding: 0 0 20px;
+}
+
+.btn-purchase {
+  display: block;
+  width: 100%;
+
+  background: #f5fdff;
+  color: #69b5ff;
+
+  border: 1px solid #e2f3fa;
+  border-radius: var(--radius-md);
+
+  padding: 15px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: background 0.2s;
+
+  text-align: center;
+}
+
+.btn-purchase:hover {
+  background: #eefaff;
+}
+
+
+/* =========================================
+   작은 화면
+========================================= */
+
+@media (max-width: 360px) {
+
+  .product-image-circle {
+    width: 165px;
+    height: 165px;
+  }
+
+  .product-lotion-image {
+    width: 135px;
+    height: 135px;
+  }
+
+  .product-name {
+    font-size: 19px;
+  }
+
+  .product-desc {
+    font-size: 13px;
+  }
+
+  .recommend-reason {
+    padding: 16px;
+  }
+
+  .reason-text {
+    font-size: 13px;
+  }
+}

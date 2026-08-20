@@ -1,0 +1,495 @@
+/* ==================================================
+   HOME
+================================================== */
+
+.home-page {
+  padding-top: 12px;
+  background: #ffffff;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.home-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f2933;
+  letter-spacing: -0.03em;
+}
+
+.orbit-title {
+  color: #a8d9ff;
+}
+
+.home-greeting {
+  font-size: 14px;
+  color: #687789;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.greeting-icon {
+  font-size: 16px;
+}
+
+.notification-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #718096;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ==================================================
+   PREDICTION CARD
+================================================== */
+
+.prediction-card {
+  background: linear-gradient(
+    to bottom,
+    #f5fdff 0%,
+    #f9fdff 35%,
+    #ffffff 100%
+  );
+
+  border-radius: 22px;
+
+  padding: 20px 20px 14px;
+
+  box-shadow:
+    0 8px 22px rgba(92, 126, 150, 0.10);
+
+  margin-bottom: 24px;
+
+  overflow: hidden;
+}
+
+
+/* ==================================================
+   TOP
+================================================== */
+
+.prediction-top {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  min-height: 124px;
+
+  margin-bottom: 0;
+}
+
+.prediction-text-area {
+  flex: 1;
+
+  padding-top: 4px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.prediction-label {
+  font-size: 12px;
+  font-weight: 500;
+
+  color: #8ba7b7;
+
+  display: block;
+
+  margin-bottom: 7px;
+}
+
+.prediction-status {
+  font-size: 19px;
+
+  font-weight: 700;
+
+  color: #1f2933;
+
+  letter-spacing: -0.03em;
+
+  line-height: 1.3;
+
+  margin-bottom: 8px;
+}
+
+.prediction-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prediction-time {
+  font-size: 12px;
+  color: #8ba7b7;
+}
+
+.prediction-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px 9px;
+
+  border-radius: 10px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  background: #fff0f0;
+  color: #ff7777;
+}
+
+
+/* ==================================================
+   FACE
+================================================== */
+
+.prediction-face {
+  position: relative;
+  width: 125px;
+  height: 140px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: -30px;
+  overflow: visible;
+  z-index: 1;
+}
+
+.prediction-face img {
+  width: 120px;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: top center;
+  display: block;
+
+}
+
+
+/* ==================================================
+   GRAPH
+================================================== */
+
+.prediction-graph {
+  position: relative;
+
+  margin-top: 4px;
+
+  padding-top: 10px;
+}
+
+.graph-title {
+  font-size: 11px;
+
+  color: #8ba7b7;
+
+  margin-bottom: 2px;
+}
+
+.graph-svg {
+  width: 100%;
+
+  height: 82px;
+
+  display: block;
+
+  overflow: visible;
+}
+
+.graph-time-labels {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 1px 1px 0;
+}
+
+.graph-time-labels span {
+  font-size: 10px;
+
+  color: #8ba0ad;
+
+  font-weight: 500;
+}
+
+
+/* ==================================================
+   FACTORS
+================================================== */
+
+.factors-section {
+  margin-bottom: 24px;
+}
+
+.section-label {
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #1f2933;
+
+  margin-bottom: 12px;
+
+  letter-spacing: -0.02em;
+}
+
+.factors-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 8px;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  padding: 16px 10px;
+
+  box-shadow:
+    0 5px 18px rgba(92, 126, 150, 0.08);
+}
+
+.factor-item {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 4px;
+
+  flex: 1;
+
+  min-width: 0;
+}
+
+.factor-icon-wrap {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 1px;
+}
+
+.sleep-icon {
+  background: #f1ebff;
+  color: #8968e8;
+}
+
+.activity-icon {
+  background: #fff0f0;
+  color: #ff7777;
+}
+
+.humidity-icon {
+  background: #eaf5ff;
+  color: #4da1f5;
+}
+
+.uv-icon {
+  background: #fff7dc;
+  color: #f6b92c;
+}
+
+.factor-name {
+  font-size: 11px;
+  color: #687789;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.factor-val {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1f2933;
+  white-space: nowrap;
+}
+
+.factor-sub {
+  font-size: 10px;
+  font-weight: 500;
+  color: #9aa9b5;
+}
+
+
+/* ==================================================
+   AI COMMENT
+================================================== */
+
+.ai-comment-section {
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  padding: 18px;
+
+  box-shadow:
+    0 5px 18px rgba(92, 126, 150, 0.08);
+
+  margin-bottom: 20px;
+}
+
+.ai-comment-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.ai-badge {
+  width: 24px;
+  height: 24px;
+
+  background: #f5fdff;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-comment-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #69b5ff;
+}
+
+.ai-comment-body {
+  font-size: 14px;
+  color: #1f2933;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.ai-comment-care {
+  font-size: 14px;
+
+  color: #1f2933;
+
+  background: #f8fbfd;
+
+  padding: 11px 14px;
+
+  border-radius: 12px;
+
+  margin-bottom: 12px;
+
+  line-height: 1.5;
+}
+
+.ai-comment-care strong {
+  color: #69b5ff;
+}
+
+
+/* ==================================================
+   CARE BUTTON
+================================================== */
+
+.btn-today-care {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  width: 100%;
+
+  background: #f5fdff;
+
+  color: #69b5ff;
+
+  border: 1px solid #e7f8ff;
+
+  border-radius: 12px;
+
+  padding: 12px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.btn-today-care:hover {
+  background: #eefaff;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 360px) {
+
+  .prediction-card {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .prediction-status {
+    font-size: 17px;
+  }
+
+  .prediction-face {
+    width: 110px;
+    height: 120px;
+
+    margin-left: -8px;
+  }
+
+  .prediction-face img {
+    width: 102px;
+  }
+
+  .factor-val {
+    font-size: 11px;
+  }
+
+  .factor-icon-wrap {
+    width: 32px;
+    height: 32px;
+  }
+
+  .factor-icon-wrap svg {
+    width: 16px;
+    height: 16px;
+  }
+}

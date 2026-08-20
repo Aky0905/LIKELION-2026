@@ -1,0 +1,305 @@
+/* =========================
+   WHS History Page
+========================= */
+
+.whs-history-page {
+  background: #ffffff;
+  min-height: 100%;
+  padding: 12px 20px 32px;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+.history-header {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.history-header .back-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+
+  color: #5f6875;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.history-title {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #111827;
+
+  letter-spacing: -0.03em;
+}
+
+
+/* =========================
+   안내 카드
+========================= */
+
+.history-guide {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 16px;
+
+  background: #f5fdff;
+
+  border: 1px solid #edf5ff;
+
+  border-radius: 14px;
+
+  margin-bottom: 28px;
+
+  box-sizing: border-box;
+}
+
+.guide-calendar {
+  width: 92px;
+  height: 72px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guide-calendar svg {
+  display: block;
+}
+
+.guide-text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.guide-text strong {
+  font-size: 13px;
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  color: #111827;
+}
+
+.guide-text span {
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  color: #8d98a7;
+}
+
+
+/* =========================
+   방문 기록
+========================= */
+
+.history-section {
+  margin-bottom: 18px;
+}
+
+.history-section-title {
+  margin: 0 0 10px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.history-record-list {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #edf0f4;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+.history-record {
+  min-height: 60px;
+
+  padding: 12px 16px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 4px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.history-record:last-child {
+  border-bottom: none;
+}
+
+.history-record strong {
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #1f2937;
+}
+
+.history-record span {
+  font-size: 11px;
+
+  color: #8d98a7;
+}
+
+
+/* =========================
+   진단 주기 추천
+========================= */
+
+.diagnosis-cycle {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px 14px;
+
+  /* 테두리 삭제 */
+  border: none;
+
+  /* 기존 카드와 어울리는 연한 배경 */
+  background: #f5fdff;
+
+  border-radius: 14px;
+
+  box-sizing: border-box;
+
+  margin-top: 16px;
+   margin-bottom: 24px;
+}
+
+
+/* =========================
+   시계 아이콘
+========================= */
+
+.cycle-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #f5fdff;
+
+  color: #69b5ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================
+   추천 내용
+========================= */
+
+.cycle-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.cycle-info strong {
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #111827;
+
+  margin-bottom: 2px;
+}
+
+.cycle-info span {
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  color: #8d98a7;
+}
+
+.cycle-info b {
+  color: #69b5ff;
+  font-weight: 700;
+}
+
+
+/* =========================
+   모바일 대응
+========================= */
+
+@media (max-width: 360px) {
+
+  .whs-history-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .history-guide {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .guide-calendar {
+    width: 82px;
+  }
+
+  .guide-text strong {
+    font-size: 12px;
+  }
+
+  .guide-text span {
+    font-size: 9px;
+  }
+
+  .history-record {
+    min-height: 56px;
+  }
+
+  .diagnosis-cycle {
+    padding: 13px 12px;
+  }
+
+}

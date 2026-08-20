@@ -1,0 +1,758 @@
+/* =========================
+   TRIGGER 분석
+========================= */
+
+.analysis-page {
+  background: #ffffff;
+  min-height: 100%;
+  padding: 0 20px 32px;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+.analysis-header {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding-top: 18px;
+  margin-bottom: 22px;
+
+  min-height: 88px;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   가운데 제목 영역
+========================= */
+
+.analysis-header-title {
+  position: absolute;
+
+  left: 50%;
+  top: 18px;
+
+  transform: translateX(-50%);
+
+  width: max-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   TRIGGER 분석
+========================= */
+
+.analysis-label {
+  margin-bottom: 10px;
+
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 700;
+
+  color: #a8d9ff;
+
+  letter-spacing: -0.04em;
+
+  text-align: center;
+}
+
+
+/* =========================
+   왜 이렇게 예측했을까요?
+========================= */
+
+.analysis-header h1 {
+  margin: 0;
+
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 700;
+
+  color: #111827;
+
+  letter-spacing: -0.04em;
+
+  text-align: center;
+}
+
+
+/* =========================
+   설명
+========================= */
+
+.analysis-header p {
+  margin: 6px 0 0;
+
+  font-size: 12px;
+  line-height: 1.5;
+
+  color: #8d98a7;
+
+  text-align: center;
+}
+
+
+/* =========================
+   알림
+   → 오른쪽 고정
+========================= */
+
+.analysis-notification-btn {
+  position: absolute;
+
+  right: 0;
+  top: 18px;
+
+  width: 36px;
+  height: 36px;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #657184;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  z-index: 2;
+}
+
+
+/* =========================
+   오프라인 진단 기준
+========================= */
+
+.offline-diagnosis-section {
+  margin-top: 18px;
+}
+
+
+/* =========================
+   섹션 제목 + 날짜
+========================= */
+
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  gap: 3px;
+
+  margin-bottom: 10px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #111827;
+
+  letter-spacing: -0.03em;
+}
+
+.diagnosis-date {
+  font-size: 10px;
+  color: #9aa4b2;
+}
+
+
+/* =========================
+   오프라인 진단 카드
+========================= */
+
+.offline-card {
+  background: linear-gradient(
+    to bottom,
+    #f5fdff 0%,
+    #f9fdff 35%,
+    #ffffff 100%
+  );
+
+  border-radius: 22px;
+
+  padding: 20px 20px 14px;
+
+  box-shadow:
+    0 8px 22px rgba(92, 126, 150, 0.10);
+
+  margin-bottom: 24px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   카드 상단
+========================= */
+
+.offline-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 13px;
+  margin-bottom: 2px;
+
+  border-bottom: 1px solid #e3edf6;
+}
+
+.offline-card-title {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.offline-card-title strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.offline-card-title span {
+  font-size: 10px;
+  color: #98a3b2;
+}
+
+
+/* =========================
+   기준 뱃지
+========================= */
+
+.offline-badge {
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  background: #eaf5ff;
+  color: #69b5ff;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   진단 결과 리스트
+========================= */
+
+.offline-result-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.offline-result-item {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 0;
+}
+
+
+/* =========================
+   진단 아이콘
+========================= */
+
+.offline-icon {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.offline-icon.purple {
+  background: #f1eaff;
+  color: #936cff;
+}
+
+.offline-icon.blue {
+  background: #eaf5ff;
+  color: #4a9eff;
+}
+
+.offline-icon.red {
+  background: #fff0f1;
+  color: #f06f78;
+}
+
+.offline-icon.pink {
+  background: #ffecef;
+  color: #f58a9a;
+}
+
+.offline-icon.yellow {
+  background: #fff7dc;
+  color: #e7ad24;
+}
+
+
+/* =========================
+   결과 정보
+========================= */
+
+.offline-result-info {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.offline-result-title {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.offline-result-title strong {
+  font-size: 12px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.offline-result-title span {
+  font-size: 10px;
+  color: #6f7d8d;
+}
+
+
+/* =========================
+   결과 바
+========================= */
+
+.offline-result-bar-wrap {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.offline-result-bar {
+  flex: 1;
+
+  height: 4px;
+
+  background: #e8edf2;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+}
+
+.offline-result-fill {
+  height: 100%;
+
+  border-radius: 999px;
+}
+
+.offline-result-fill.purple {
+  background: #936cff;
+}
+
+.offline-result-fill.blue {
+  background: #4a9eff;
+}
+
+.offline-result-fill.red {
+  background: #f06f78;
+}
+
+.offline-result-fill.pink {
+  background: #f58a9a;
+}
+
+.offline-result-fill.yellow {
+  background: #e7ad24;
+}
+
+
+/* =========================
+   결과 레벨
+========================= */
+
+.offline-level {
+  width: 25px;
+
+  text-align: right;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  flex-shrink: 0;
+}
+
+.offline-level.purple {
+  color: #936cff;
+}
+
+.offline-level.blue {
+  color: #4a9eff;
+}
+
+.offline-level.red {
+  color: #f06f78;
+}
+
+.offline-level.pink {
+  color: #f58a9a;
+}
+
+.offline-level.yellow {
+  color: #e7ad24;
+}
+
+
+/* =========================
+   현재 나의 상태
+========================= */
+
+.current-state-section {
+  margin-top: 20px;
+}
+
+.current-heading {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  margin-bottom: 10px;
+}
+
+.current-heading h2 {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #111827;
+
+  letter-spacing: -0.03em;
+}
+
+.current-heading span {
+  font-size: 10px;
+  color: #9aa4b2;
+}
+
+
+/* =========================
+   현재 상태 카드
+========================= */
+
+.current-state-card {
+  background: #ffffff;
+
+  border: 1px solid #edf0f4;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 3px 12px rgba(30, 50, 80, 0.06);
+
+  padding: 4px 14px;
+
+  box-sizing: border-box;
+}
+
+.current-state-item {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  min-height: 58px;
+}
+
+.current-state-item + .current-state-item {
+  border-top: 1px solid #edf0f3;
+}
+
+
+/* =========================
+   현재 상태 아이콘
+========================= */
+
+.state-icon {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.state-icon.purple {
+  background: #f1eaff;
+  color: #936cff;
+}
+
+
+/* 활동량 증가 → 빨간색 유지 */
+
+.state-icon.green {
+  background: #fff0f1;
+  color: #f06f78;
+}
+
+
+/* 혹시 클래스가 red인 경우에도 빨간색 유지 */
+
+.state-icon.red {
+  background: #fff0f1;
+  color: #f06f78;
+}
+
+.state-icon.blue {
+  background: #edf7ff;
+  color: #4a9eff;
+}
+
+.state-icon.yellow {
+  background: #fff8df;
+  color: #f3b900;
+}
+
+
+/* =========================
+   현재 상태 텍스트
+========================= */
+
+.state-info {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.state-info strong {
+  font-size: 12px;
+  font-weight: 700;
+
+  color: #111827;
+
+  white-space: nowrap;
+}
+
+.state-info span {
+  font-size: 10px;
+
+  color: #7f8a99;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   방향 표시
+========================= */
+
+.trend-arrow {
+  width: 20px;
+
+  text-align: center;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  line-height: 1;
+
+  flex-shrink: 0;
+}
+
+.trend-arrow.down {
+  color: #f06f78;
+}
+
+.trend-arrow.up {
+  color: #45b883;
+}
+
+.trend-arrow.normal {
+  color: #8c98a7;
+}
+
+
+/* =========================
+   AI 분석 결과
+========================= */
+
+.analysis-ai-section {
+  margin-top: 16px;
+}
+
+.analysis-ai-card {
+  padding: 16px;
+
+  background: #f5fdff;
+
+  border: 1px solid #e8f3ff;
+
+  border-radius: 16px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   AI 분석 결과 헤더
+========================= */
+
+.analysis-ai-header {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 10px;
+
+  color: #4a9eff;
+}
+
+.analysis-ai-header strong {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.analysis-ai-star {
+  font-size: 21px;
+
+  line-height: 1;
+
+  color: #4a9eff;
+}
+
+
+/* =========================
+   AI 분석 제목
+========================= */
+
+.analysis-ai-title {
+  margin-bottom: 8px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #4a9eff;
+}
+
+
+/* =========================
+   AI 분석 내용
+========================= */
+
+.analysis-ai-card p {
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+
+  color: #667384;
+
+  word-break: keep-all;
+}
+
+.analysis-ai-card p + p {
+  margin-top: 5px;
+}
+
+
+/* =========================
+   작은 화면
+========================= */
+
+@media (max-width: 360px) {
+
+  .analysis-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .analysis-label {
+    font-size: 21px;
+  }
+
+  .analysis-header h1 {
+    font-size: 19px;
+  }
+
+  .offline-diagnosis-section {
+    margin-top: 18px;
+  }
+
+  .offline-card {
+    padding: 14px;
+  }
+
+  .offline-result-item {
+    gap: 8px;
+  }
+
+  .offline-result-title {
+    gap: 5px;
+  }
+
+  .offline-result-title strong {
+    font-size: 11px;
+  }
+
+  .offline-result-title span {
+    font-size: 9px;
+  }
+
+  .current-state-card {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

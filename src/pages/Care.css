@@ -1,0 +1,506 @@
+/* =========================================
+   Care Page
+========================================= */
+
+.care-page {
+  min-height: 100%;
+  background: #ffffff;
+  padding: 28px 20px 110px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   Header
+========================================= */
+
+.care-header {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+  min-height: 48px;
+}
+
+
+/* 제목 + 설명 가운데 정렬 */
+
+.care-header > div:first-child {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* 오늘의 케어 제안 */
+
+.care-title {
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.35;
+
+  color: #a8d9ff;
+
+  letter-spacing: -0.04em;
+
+  text-align: center;
+}
+
+
+/* AI가 내 피부에 맞는 케어를 추천해요. */
+
+.care-description {
+  margin: 7px 0 0;
+
+  font-size: 13px;
+
+  color: #111827;
+
+  line-height: 1.5;
+
+  letter-spacing: -0.02em;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   알림 버튼
+========================================= */
+
+.care-notification-btn {
+  position: absolute;
+
+  top: -3px;
+  right: 0;
+
+  width: 36px;
+  height: 36px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+
+  border: none;
+
+  color: #667085;
+
+  cursor: pointer;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   Priority Care Card
+========================================= */
+
+.priority-care-card {
+  position: relative;
+
+  width: 100%;
+  min-height: 330px;
+
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    180deg,
+    #F5FDFF 0%,
+    #F5FDFF 72%,
+    #FFFFFF 100%
+  );
+
+  border-radius: 20px;
+
+  padding: 58px 24px 24px;
+
+  border: 1px solid rgba(210, 230, 238, 0.65);
+
+  box-shadow:
+    0 8px 24px rgba(67, 100, 120, 0.08);
+
+  overflow: visible;
+}
+
+
+/* =========================================
+   Priority Label
+========================================= */
+
+.priority-label {
+  position: absolute;
+
+  top: 0;
+  left: 24px;
+
+  min-width: 76px;
+  height: 34px;
+
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #afe1f5;
+
+  color: #f9fbfd;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  border-radius: 0 0 9px 9px;
+
+  box-shadow: none;
+}
+
+
+/* 말풍선 꼬리 제거 */
+
+.priority-label::after {
+  display: none;
+}
+
+
+/* =========================================
+   Priority Content
+========================================= */
+
+.priority-care-content {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* =========================================
+   Product Image
+   ★ 여기 수정
+========================================= */
+
+.care-product-image {
+  width: 180px;
+  height: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 9px;
+
+  overflow: visible;
+}
+
+
+/* lotion.png */
+
+.care-product-image img {
+  width: 250px;
+  height: 250px;
+
+  max-width: none;
+  max-height: none;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* =========================================
+   기존 가상 제품 이미지
+========================================= */
+
+.product-bottle {
+  position: relative;
+
+  width: 43px;
+  height: 78px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.product-cap {
+  position: absolute;
+
+  top: 0;
+
+  width: 25px;
+  height: 11px;
+
+  border: 1.5px solid #83BFFF;
+  border-bottom: none;
+
+  border-radius: 5px 5px 0 0;
+
+  background: #F5FDFF;
+}
+
+.product-body {
+  position: absolute;
+
+  top: 9px;
+
+  width: 43px;
+  height: 68px;
+
+  border: 1.5px solid #83BFFF;
+
+  border-radius: 8px 8px 7px 7px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-circle {
+  width: 19px;
+  height: 19px;
+
+  border: 1.3px solid #83BFFF;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   Product Information
+========================================= */
+
+.care-product-info {
+  text-align: center;
+}
+
+.care-product-name {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #172033;
+
+  letter-spacing: -0.04em;
+}
+
+.care-product-description {
+  margin: 8px 0 0;
+
+  font-size: 12px;
+
+  color: #7B8794;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   Product Button
+========================================= */
+
+.care-product-button {
+  width: 100%;
+  height: 42px;
+
+  margin-top: 22px;
+
+  border: 1px solid #DCEFFF;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  color: #4B9DFF;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.care-product-button:hover {
+  background: #ffffff;
+}
+
+.care-product-button:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================
+   Additional Tips
+========================================= */
+
+.additional-tips {
+  margin-top: 27px;
+}
+
+.section-title {
+  margin: 0 0 12px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #172033;
+
+  letter-spacing: -0.03em;
+}
+
+
+/* =========================================
+   Tips Card
+========================================= */
+
+.tips-card {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 7px 15px;
+
+  background: #ffffff;
+
+  border: 1px solid #EEF2F5;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 5px 18px rgba(40, 70, 90, 0.045);
+}
+
+
+/* =========================================
+   Tip Item
+========================================= */
+
+.tip-item {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  border-bottom: 1px solid #F1F3F5;
+}
+
+.tip-item:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================
+   Tip Icon
+========================================= */
+
+.tip-icon {
+  width: 31px;
+  height: 31px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+.tip-blue {
+  background: #EFF8FF;
+
+  color: #5DAAFF;
+}
+
+.tip-purple {
+  background: #F4F0FF;
+
+  color: #9274F2;
+}
+
+
+/* =========================================
+   Tip Text
+========================================= */
+
+.tip-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.tip-content strong {
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #374151;
+
+  letter-spacing: -0.02em;
+}
+
+.tip-content span {
+  font-size: 10px;
+
+  color: #9AA4B2;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media (max-width: 360px) {
+
+  .care-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .priority-care-card {
+    min-height: 320px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .care-product-name {
+    font-size: 17px;
+  }
+
+  .care-product-image {
+    width: 160px;
+    height: 140px;
+  }
+
+  .care-product-image img {
+    width: 160px;
+    height: 160px;
+
+    max-width: none;
+    max-height: none;
+  }
+}
