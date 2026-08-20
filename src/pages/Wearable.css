@@ -75,6 +75,10 @@
   color: var(--primary);
 }
 
+.device-status.disconnected {
+  color: var(--text-tertiary, #9ca3af);
+}
+
 .device-toggle {
   flex-shrink: 0;
 }
@@ -125,6 +129,11 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  transition: opacity 0.2s;
+}
+
+.sync-list.disabled {
+  opacity: 0.45;
 }
 
 .sync-item {
@@ -201,4 +210,9 @@
 
 .btn-sync:hover {
   background: #d4ebff;
+}
+
+.btn-sync:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

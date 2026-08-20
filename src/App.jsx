@@ -3,7 +3,6 @@ import BottomNav from './components/BottomNav'
 
 import Home from './pages/Home'
 import Analysis from './pages/Analysis'
-import MySkin from './pages/MySkin'
 import Care from './pages/Care'
 import ProductDetail from './pages/ProductDetail'
 
@@ -17,6 +16,7 @@ import WHSTrend from './pages/WHSTrend'
 
 import AIReport from './pages/AIReport'
 import MyPage from './pages/MyPage'
+import Profile from './pages/Profile'
 import Wearable from './pages/Wearable'
 import SkinRecord from './pages/SkinRecord'
 import AlarmSettings from './pages/AlarmSettings'
@@ -47,17 +47,8 @@ function App() {
             element={<Analysis />}
           />
 
-
-          {/* =========================
-              내 피부
-          ========================= */}
           <Route
-            path="/skin"
-            element={<MySkin />}
-          />
-
-          <Route
-            path="/skin/report"
+            path="/analysis/report"
             element={<AIReport />}
           />
 
@@ -122,6 +113,11 @@ function App() {
           <Route
             path="/my"
             element={<MyPage />}
+          />
+
+          <Route
+            path="/my/profile"
+            element={<Profile />}
           />
 
           <Route

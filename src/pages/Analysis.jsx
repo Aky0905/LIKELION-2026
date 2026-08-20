@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Analysis.css'
 
 
@@ -16,7 +17,7 @@ function AnalysisIcon({ type }) {
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M21 12.8A8.5 8.5 0 0 1 11.2 3a7 7 0 1 0 9.8 9.8Z" />
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
       </svg>
     )
   }
@@ -33,7 +34,7 @@ function AnalysisIcon({ type }) {
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M12 3.5S6.5 10 6.5 14.5a5.5 5.5 0 0 0 11 0C17.5 10 12 3.5 12 3.5Z" />
+        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
       </svg>
     )
   }
@@ -50,12 +51,10 @@ function AnalysisIcon({ type }) {
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <circle cx="12" cy="5" r="2" />
-        <path d="M9 10l3-1 3 2" />
-        <path d="M12 9v5" />
-        <path d="M12 14l-3 5" />
-        <path d="M12 14l4 4" />
-        <path d="M9 12l-3 2" />
+        <circle cx="13" cy="4" r="1" />
+        <path d="M4 17l5 1l.75 -1.5" />
+        <path d="M15 21l0 -4l-4 -3l1 -6" />
+        <path d="M7 12l0 -3l5 -1l3 3l3 1" />
       </svg>
     )
   }
@@ -117,6 +116,8 @@ function TrendArrow({ type }) {
 
 
 function Analysis() {
+
+  const navigate = useNavigate()
 
   const offlineDiagnosis = [
     {
@@ -405,15 +406,15 @@ function Analysis() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <circle cx="12" cy="12" r="3" />
-                    <path d="M12 2v2" />
-                    <path d="M12 20v2" />
-                    <path d="M4.93 4.93l1.41 1.41" />
-                    <path d="M17.66 17.66l1.41 1.41" />
-                    <path d="M2 12h2" />
-                    <path d="M20 12h2" />
-                    <path d="M4.93 19.07l1.41-1.41" />
-                    <path d="M17.66 6.34l1.41-1.41" />
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                   </svg>
                 )}
 
@@ -462,6 +463,13 @@ function Analysis() {
     <p className="analysis-ai-description">
       수면 부족과 낮은 습도가 함께 나타나 피부 수분 부족과 민감도 증가에 영향을 준 것으로 분석됩니다. 오늘은 보습과 진정 중심의 관리가 필요하며, 외부 자극을 최소화하는 것이 좋아요.
     </p>
+
+    <button
+      className="analysis-report-btn"
+      onClick={() => navigate('/analysis/report')}
+    >
+      AI 리포트 전체 보기
+    </button>
 
   </div>
 </section>

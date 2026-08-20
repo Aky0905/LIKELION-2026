@@ -61,12 +61,12 @@ function Care() {
 
           {/* 제품 이미지 */}
           <div className="care-product-image">
-  <img
-    src="/src/assets/lotion.png"
-    alt="진정 보습 케어 제품"
-    className="care-lotion-image"
-  />
-</div>
+            <img
+              src={lotionImage}
+              alt="진정 보습 케어 제품"
+              className="care-lotion-image"
+            />
+          </div>
 
 
           {/* 제품 정보 */}

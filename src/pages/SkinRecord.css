@@ -42,7 +42,10 @@
 }
 
 .mood-emoji {
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
 }
 
 .mood-label {
@@ -114,10 +117,39 @@
 }
 
 .record-card {
+  position: relative;
   background: var(--bg-card);
   border-radius: var(--radius-md);
   padding: 14px 16px;
   box-shadow: var(--shadow-sm);
+}
+
+.record-delete {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-tertiary);
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: color 0.2s, background 0.2s;
+}
+
+.record-delete:hover {
+  color: var(--danger);
+  background: var(--border-light);
+}
+
+.record-empty {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  text-align: center;
+  padding: 24px 0;
 }
 
 .record-date {

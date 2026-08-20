@@ -103,7 +103,7 @@ function Home() {
                 <stop
                   offset="0%"
                   stopColor="#69B5FF"
-                  stopOpacity="0.12"
+                  stopOpacity="0.14"
                 />
 
                 <stop
@@ -124,7 +124,7 @@ function Home() {
                 <stop
                   offset="0%"
                   stopColor="#FF8585"
-                  stopOpacity="0.18"
+                  stopOpacity="0.20"
                 />
 
                 <stop
@@ -137,15 +137,15 @@ function Home() {
             </defs>
 
 
-            {/* 파란 영역 */}
+            {/* 파란 영역 (00~12) */}
             <path
               d="
-                M0 70
-                C18 69 30 68 45 69
-                C62 70 76 69 92 69
-                C108 69 120 68 135 69
-                C143 69 148 69 154 68
-                L154 92
+                M0 66
+                C20 63 30 62 40 62
+                C55 62 70 66 80 66
+                C95 66 100 71 110 70
+                C125 69 135 66 150 60
+                L150 92
                 L0 92
                 Z
               "
@@ -153,72 +153,85 @@ function Home() {
             />
 
 
-            {/* 빨간 영역 */}
+            {/* 빨간 영역 (12~18 봉우리) */}
             <path
               d="
-                M154 68
-                C166 66 174 58 184 51
-                C195 43 204 34 216 31
-                C228 28 238 34 247 42
-                C255 50 263 61 274 66
-                L274 92
-                L154 92
+                M150 60
+                C165 54 178 44 195 36
+                C205 31 213 29 220 30
+                C232 31 240 42 250 50
+                C258 56 264 60 270 62
+                L270 92
+                L150 92
                 Z
               "
               fill="url(#redArea)"
             />
 
 
-            {/* 파란 그래프 - 00~14 */}
+            {/* 파란 영역 (18~24) */}
             <path
               d="
-                M0 70
-                C18 69 30 68 45 69
-                C62 70 76 69 92 69
-                C108 69 120 68 135 69
-                C143 69 148 69 154 68
+                M270 62
+                C288 65 305 66 320 66
+                L320 92
+                L270 92
+                Z
+              "
+              fill="url(#blueArea)"
+            />
+
+
+            {/* 파란 그래프 라인 (00~12) */}
+            <path
+              d="
+                M0 66
+                C20 63 30 62 40 62
+                C55 62 70 66 80 66
+                C95 66 100 71 110 70
+                C125 69 135 66 150 60
               "
               fill="none"
               stroke="#69B5FF"
-              strokeWidth="2"
+              strokeWidth="2.2"
               strokeLinecap="round"
             />
 
 
-            {/* 빨간 그래프 */}
+            {/* 빨간 그래프 라인 (봉우리) */}
             <path
               d="
-                M154 68
-                C166 66 174 58 184 51
-                C195 43 204 34 216 31
-                C228 28 238 34 247 42
-                C255 50 263 61 274 66
+                M150 60
+                C165 54 178 44 195 36
+                C205 31 213 29 220 30
+                C232 31 240 42 250 50
+                C258 56 264 60 270 62
               "
               fill="none"
               stroke="#FF7474"
-              strokeWidth="2"
+              strokeWidth="2.2"
               strokeLinecap="round"
             />
 
 
-            {/* 다시 파란 그래프 */}
+            {/* 파란 그래프 라인 (18~24) */}
             <path
               d="
-                M274 66
-                C287 69 302 69 320 69
+                M270 62
+                C288 65 305 66 320 66
               "
               fill="none"
               stroke="#69B5FF"
-              strokeWidth="2"
+              strokeWidth="2.2"
               strokeLinecap="round"
             />
 
 
-            {/* 14:00 기준 세로 점선 */}
+            {/* 최고점 세로 점선 */}
             <line
-              x1="154"
-              y1="68"
-              x2="154"
+              x1="220"
+              y1="30"
+              x2="220"
               y2="92"
               stroke="#FF9999"
               strokeWidth="1"
@@ -228,43 +241,33 @@ function Home() {
 
 
             {/* 파란 구간 점 */}
-            <circle cx="0" cy="70" r="2.8" fill="#69B5FF" />
-            <circle cx="45" cy="69" r="2.8" fill="#69B5FF" />
-            <circle cx="92" cy="69" r="2.8" fill="#69B5FF" />
-            <circle cx="135" cy="69" r="2.8" fill="#69B5FF" />
+            <circle cx="0" cy="66" r="2.8" fill="#69B5FF" />
+            <circle cx="40" cy="62" r="2.8" fill="#69B5FF" />
+            <circle cx="80" cy="66" r="2.8" fill="#69B5FF" />
+            <circle cx="110" cy="70" r="2.8" fill="#69B5FF" />
+            <circle cx="150" cy="60" r="2.8" fill="#69B5FF" />
 
 
             {/* 빨간 구간 점 */}
-            <circle cx="154" cy="68" r="2.8" fill="#FF7474" />
-            <circle cx="184" cy="51" r="2.8" fill="#FF7474" />
+            <circle cx="195" cy="36" r="2.8" fill="#FF7474" />
 
             {/* 최고점 */}
             <circle
-              cx="216"
-              cy="31"
-              r="3.2"
+              cx="220"
+              cy="30"
+              r="3.4"
               fill="#ffffff"
               stroke="#FF7474"
               strokeWidth="2"
             />
 
-            <circle
-              cx="247"
-              cy="42"
-              r="2.8"
-              fill="#FF7474"
-            />
+            <circle cx="250" cy="50" r="2.8" fill="#FF7474" />
 
-            <circle
-              cx="274"
-              cy="66"
-              r="2.8"
-              fill="#69B5FF"
-            />
 
-            {/* 파란 구간 */}
-            <circle cx="296" cy="69" r="2.8" fill="#69B5FF" />
-            <circle cx="320" cy="69" r="2.8" fill="#69B5FF" />
+            {/* 파란 구간 (18~24) */}
+            <circle cx="270" cy="62" r="2.8" fill="#69B5FF" />
+            <circle cx="296" cy="65" r="2.8" fill="#69B5FF" />
+            <circle cx="320" cy="66" r="2.8" fill="#69B5FF" />
 
           </svg>
 
@@ -330,11 +333,10 @@ function Home() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <circle cx="13" cy="4" r="2" />
-                <path d="M11 8l3 2 2-2" />
-                <path d="M14 10l-1 4 4 3" />
-                <path d="M13 14l-4 4" />
-                <path d="M13 14l-1 6" />
+                <circle cx="13" cy="4" r="1" />
+                <path d="M4 17l5 1l.75 -1.5" />
+                <path d="M15 21l0 -4l-4 -3l1 -6" />
+                <path d="M7 12l0 -3l5 -1l3 3l3 1" />
               </svg>
             </div>
 
