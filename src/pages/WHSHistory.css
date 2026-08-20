@@ -150,21 +150,38 @@
 .history-record {
   min-height: 60px;
 
+  width: 100%;
   padding: 12px 16px;
 
   box-sizing: border-box;
 
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
   gap: 4px;
 
+  border: none;
   border-bottom: 1px solid #edf0f4;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.history-record:hover {
+  background: #f7fbff;
 }
 
 .history-record:last-child {
   border-bottom: none;
+}
+
+.history-record-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .history-record strong {
@@ -178,6 +195,148 @@
   font-size: 11px;
 
   color: #8d98a7;
+}
+
+.history-record-arrow {
+  color: #c2cbd6;
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   방문 상세 바텀시트
+========================= */
+
+.visit-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 2000;
+  animation: visitFade 0.2s ease;
+}
+
+@keyframes visitFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.visit-sheet {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  border-radius: 20px 20px 0 0;
+  padding: 12px 20px 28px;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.12);
+  animation: visitSlide 0.25s ease;
+}
+
+@keyframes visitSlide {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.visit-sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: #e5e7eb;
+  border-radius: 2px;
+  margin: 0 auto 16px;
+}
+
+.visit-sheet-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.visit-sheet-date {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 3px;
+}
+
+.visit-sheet-type {
+  font-size: 13px;
+  color: #8d98a7;
+}
+
+.visit-sheet-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #8d98a7;
+  padding: 4px;
+}
+
+.visit-scores {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.visit-score-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.visit-score-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.visit-score-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #69b5ff;
+}
+
+.visit-score-track {
+  width: 100%;
+  height: 7px;
+  background: #eef1f5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.visit-score-fill {
+  height: 100%;
+  background: #69b5ff;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.visit-comment {
+  background: #f5fbff;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.visit-comment-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.visit-comment-head span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #69b5ff;
+}
+
+.visit-comment p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #4b5563;
 }
 
 
