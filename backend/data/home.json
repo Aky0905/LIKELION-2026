@@ -1,0 +1,45 @@
+{
+  "prediction": {
+    "status": "건조 · 민감 가능성 높음",
+    "time": "14:00",
+    "level": "주의",
+    "comment": "수면이 부족하고 습도가 낮아, 평소보다 피부가 민감하게 반응할 수 있어요.",
+    "care_suggestion": "오늘은 진정 · 보습 케어를 우선해 주세요."
+  },
+  "factors": {
+    "sleep": {
+      "label": "수면",
+      "value": "5시간 40분",
+      "change": "-1시간 20분",
+      "status": "negative"
+    },
+    "hrv": {
+      "label": "HRV",
+      "value": "-16%",
+      "change": "감소",
+      "status": "negative"
+    },
+    "activity": {
+      "label": "활동량",
+      "value": "+45%",
+      "change": "높음",
+      "status": "positive"
+    },
+    "humidity": {
+      "label": "습도",
+      "value": "35%",
+      "change": "낮음",
+      "status": "negative"
+    },
+    "uv": {
+      "label": "UV 지수",
+      "value": "3",
+      "change": "보통",
+      "status": "neutral"
+    }
+  },
+  "graph": {
+    "labels": ["6AM", "9AM", "12PM", "3PM", "6PM", "9PM"],
+    "values": [60, 50, 35, 30, 25, 22]
+  }
+}
