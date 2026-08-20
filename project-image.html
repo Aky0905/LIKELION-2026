@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ORBIT - 프로젝트 이미지</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --primary: #4a9eff;
+    --ink: #1a1a2e;
+    --sub: #6b7280;
+  }
+
+  html, body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    background: linear-gradient(180deg, #ffffff 0%, #eef5fd 100%);
+    color: var(--ink);
+    width: 1280px;
+    padding: 56px 52px 48px;
+  }
+
+  /* ===== 헤더 ===== */
+  .header {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  .logo {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--primary);
+    line-height: 1;
+  }
+
+  .logo-sub {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--ink);
+    padding-bottom: 6px;
+  }
+
+  .tagline {
+    font-size: 16px;
+    color: var(--sub);
+    font-weight: 500;
+    margin-bottom: 44px;
+  }
+
+  /* ===== 폰 행 ===== */
+  .phones {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .phone-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 아이폰 비율 393 x 852 (약 1 : 2.168) */
+  .phone {
+    width: 224px;   /* 210(screen) + 7*2(border) */
+    height: 469px;  /* 455(screen) + 7*2(border) */
+    border: 7px solid #1a1a2e;
+    border-radius: 34px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 16px 38px rgba(30, 60, 110, 0.18);
+    position: relative;
+  }
+
+  .phone .screen {
+    width: 210px;
+    height: 455px;
+    overflow: hidden;
+    position: relative;
+    background: #f8fafd;
+  }
+
+  /* 실제 앱을 393px 폭으로 렌더한 뒤 zoom으로 선명하게 축소 (210/393 ≈ 0.5344) */
+  .phone iframe {
+    width: 393px;
+    height: 852px;
+    border: 0;
+    zoom: 0.5344;
+  }
+
+  .cap {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .cap-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--primary);
+  }
+  .cap-sub {
+    font-size: 12px;
+    color: var(--sub);
+    margin-top: 4px;
+  }
+
+  /* ===== 푸터 ===== */
+  .footer {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 44px;
+    padding-top: 24px;
+    border-top: 1px solid #dde7f2;
+  }
+  .footer-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--sub);
+    letter-spacing: 0.05em;
+  }
+  .palette {
+    display: flex;
+    gap: 8px;
+  }
+  .swatch {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .type-sample {
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <span class="logo">ORBIT</span>
+    <span class="logo-sub">AI 피부 비서</span>
+  </div>
+  <p class="tagline">한 번의 피부 진단을, 매일의 피부 관리로. — WHS 진단을 일상 피부 관리로 이어주는 AI 피부 비서</p>
+
+  <div class="phones">
+
+    <div class="phone-cell">
+      <div class="phone"><div class="screen"><iframe src="http://localhost:3000/" scrolling="no"></iframe></div></div>
+      <div class="cap"><div class="cap-title">홈</div><div class="cap-sub">오늘의 피부 예측</div></div>
+    </div>
+
+    <div class="phone-cell">
+      <div class="phone"><div class="screen"><iframe src="http://localhost:3000/analysis" scrolling="no"></iframe></div></div>
+      <div class="cap"><div class="cap-title">분석</div><div class="cap-sub">진단 + 생활 데이터 분석</div></div>
+    </div>
+
+    <div class="phone-cell">
+      <div class="phone"><div class="screen"><iframe src="http://localhost:3000/care" scrolling="no"></iframe></div></div>
+      <div class="cap"><div class="cap-title">케어</div><div class="cap-sub">오늘의 케어 제안</div></div>
+    </div>
+
+    <div class="phone-cell">
+      <div class="phone"><div class="screen"><iframe src="http://localhost:3000/whs" scrolling="no"></iframe></div></div>
+      <div class="cap"><div class="cap-title">WHS</div><div class="cap-sub">예약 · 진단 · 재진 연결</div></div>
+    </div>
+
+    <div class="phone-cell">
+      <div class="phone"><div class="screen"><iframe src="http://localhost:3000/my" scrolling="no"></iframe></div></div>
+      <div class="cap"><div class="cap-title">마이</div><div class="cap-sub">기록 · 웨어러블 · 설정</div></div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <span class="footer-label">COLOR</span>
+    <div class="palette">
+      <span class="swatch" style="background:#4a9eff"></span>
+      <span class="swatch" style="background:#69b5ff"></span>
+      <span class="swatch" style="background:#e8f4ff"></span>
+      <span class="swatch" style="background:#f8fafd"></span>
+      <span class="swatch" style="background:#1a1a2e"></span>
+    </div>
+    <span class="footer-label" style="margin-left:16px;">TYPOGRAPHY</span>
+    <span class="type-sample">Pretendard</span>
+  </div>
+
+</body>
+</html>
