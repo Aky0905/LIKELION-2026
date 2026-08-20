@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import BottomNav from './components/BottomNav'
+import ScrollToTop from './components/ScrollToTop'
 
 import Home from './pages/Home'
 import Analysis from './pages/Analysis'
@@ -26,6 +27,7 @@ import AppSettings from './pages/AppSettings'
 function App() {
   return (
     <div className="app-container">
+      <ScrollToTop />
       <div className="page-content">
 
         <Routes>
